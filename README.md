@@ -125,8 +125,8 @@ hanbit-design/
 
 ## 라이선스
 
-Copyright (c) 2025 Hanbit Media, Inc. All Rights Reserved.
+Copyright (c) 2025 HanbitN, Inc. All Rights Reserved.
 
-이 저장소의 모든 콘텐츠는 한빛미디어 주식회사의 자산입니다.  
+이 저장소의 모든 콘텐츠는 한빛앤 주식회사의 자산입니다.  
 사전 서면 허가 없이 복제·수정·배포·재사용을 금합니다.  
 자세한 내용은 [LICENSE](./LICENSE) 파일을 참고하세요.
