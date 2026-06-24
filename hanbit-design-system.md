@@ -14,8 +14,9 @@
    - [Semantic](#semantic)
    - [Component](#component)
    - [Modal](#modal)
-3. [브레이크포인트](#브레이크포인트-breakpoints)
-4. [컴포넌트](#컴포넌트)
+3. [타이포그래피](#타이포그래피-typography)
+4. [브레이크포인트](#브레이크포인트-breakpoints)
+5. [컴포넌트](#컴포넌트)
    - [Icon](#icon)
    - [Illustration & Logo](#illustration--logo)
    - [Element](#element)
@@ -614,6 +615,178 @@ UI를 구성하는 기초 요소들.
 |----------|---------|
 | Ratio/Vertical | Ratio |
 | Ratio/Horizontal | Aspect Ratio |
+
+---
+
+## 타이포그래피 (Typography)
+
+- 폰트: **Pretendard** (전 구간 공통)
+- weight 표기: Figma의 "Bold" = SemiBold(600), "Medium" = 500, "Regular" = 400
+- letter-spacing: Figma % → px 환산값 (`fontSize × letterSpacing% / 100`)
+- Normal vs Reading: **Normal**은 UI 컴포넌트용(타이트한 행간), **Reading**은 장문 콘텐츠용(넓은 행간)
+
+---
+
+### Display
+> 텍스트를 가장 주요하게 나타낼 때 사용. 히어로 배너, 랜딩 최상단 등 가장 임팩트 있는 영역에 사용.
+
+| 스타일 | Size | Weight | Line Height | Letter Spacing |
+|--------|------|--------|-------------|----------------|
+| Display 1/Bold | 56px | 700 | 128.6% | -3.19% (-1.79px) |
+| Display 1/Medium | 56px | 500 | 128.6% | -3.19% (-1.79px) |
+| Display 1/Regular | 56px | 400 | 128.6% | -3.19% (-1.79px) |
+| Display 2/Bold | 40px | 700 | 130% | -2.82% (-1.13px) |
+| Display 2/Medium | 40px | 500 | 130% | -2.82% (-1.13px) |
+| Display 2/Regular | 40px | 400 | 130% | -2.82% (-1.13px) |
+
+```css
+.display-1-bold   { font-family: 'Pretendard'; font-size: 56px; font-weight: 700; line-height: 1.286; letter-spacing: -1.79px; }
+.display-1-medium { font-family: 'Pretendard'; font-size: 56px; font-weight: 500; line-height: 1.286; letter-spacing: -1.79px; }
+.display-2-bold   { font-family: 'Pretendard'; font-size: 40px; font-weight: 700; line-height: 1.30;  letter-spacing: -1.13px; }
+.display-2-medium { font-family: 'Pretendard'; font-size: 40px; font-weight: 500; line-height: 1.30;  letter-spacing: -1.13px; }
+```
+
+---
+
+### Title
+> 텍스트를 주요하게 나타낼 때 사용. Heading보다 크고 Display보다 작은 섹션 타이틀 영역.
+
+| 스타일 | Size | Weight | Line Height | Letter Spacing |
+|--------|------|--------|-------------|----------------|
+| Title 1/Bold | 36px | 700 | 133.4% | -2.70% (-0.97px) |
+| Title 1/Medium | 36px | 500 | 133.4% | -2.70% (-0.97px) |
+| Title 1/Regular | 36px | 400 | 133.4% | -2.70% (-0.97px) |
+| Title 2/Bold | 28px | 700 | 135.8% | -2.36% (-0.66px) |
+| Title 2/Medium | 28px | 500 | 135.8% | -2.36% (-0.66px) |
+| Title 2/Regular | 28px | 400 | 135.8% | -2.36% (-0.66px) |
+| Title 3/Bold | 24px | 700 | 133.4% | -2.30% (-0.55px) |
+| Title 3/Medium | 24px | 500 | 133.4% | -2.30% (-0.55px) |
+| Title 3/Regular | 24px | 400 | 133.4% | -2.30% (-0.55px) |
+
+```css
+.title-1-bold   { font-family: 'Pretendard'; font-size: 36px; font-weight: 700; line-height: 1.334; letter-spacing: -0.97px; }
+.title-1-medium { font-family: 'Pretendard'; font-size: 36px; font-weight: 500; line-height: 1.334; letter-spacing: -0.97px; }
+.title-2-bold   { font-family: 'Pretendard'; font-size: 28px; font-weight: 700; line-height: 1.358; letter-spacing: -0.66px; }
+.title-2-medium { font-family: 'Pretendard'; font-size: 28px; font-weight: 500; line-height: 1.358; letter-spacing: -0.66px; }
+.title-3-bold   { font-family: 'Pretendard'; font-size: 24px; font-weight: 700; line-height: 1.334; letter-spacing: -0.55px; }
+.title-3-medium { font-family: 'Pretendard'; font-size: 24px; font-weight: 500; line-height: 1.334; letter-spacing: -0.55px; }
+```
+
+---
+
+### Heading (H1~H4)
+> 섹션 내 주제 또는 본문 상위 강조. H1/H3은 큰 화면, H2/H4는 작은 화면 대응.
+> Bold = SemiBold (600).
+
+| 스타일 | Size | Weight | 용도 | Line Height | Letter Spacing |
+|--------|------|--------|------|-------------|----------------|
+| H1/Bold | 22px | 600 | 섹션 주제 — 큰 화면 | 136.4% | -1.94% (-0.43px) |
+| H1/Medium | 22px | 500 | 섹션 주제 — 큰 화면 | 136.4% | -1.94% (-0.43px) |
+| H1/Regular | 22px | 400 | 섹션 주제 — 큰 화면 | 136.4% | -1.94% (-0.43px) |
+| H2/Bold | 20px | 600 | 섹션 주제 — 작은 화면 | 140% | -1.20% (-0.24px) |
+| H2/Medium | 20px | 500 | 섹션 주제 — 작은 화면 | 140% | -1.20% (-0.24px) |
+| H2/Regular | 20px | 400 | 섹션 주제 — 작은 화면 | 140% | -1.20% (-0.24px) |
+| H3/Bold | 18px | 600 | 본문 강조 — 큰 화면 | 144.5% | ~0px |
+| H3/Medium | 18px | 500 | 본문 강조 — 큰 화면 | 144.5% | ~0px |
+| H3/Regular | 18px | 400 | 본문 강조 — 큰 화면 | 144.5% | ~0px |
+| H4/Bold | 17px | 600 | 본문 강조 — 작은 화면 | 141.2% | 0px |
+| H4/Medium | 17px | 500 | 본문 강조 — 작은 화면 | 141.2% | 0px |
+| H4/Regular | 17px | 400 | 본문 강조 — 작은 화면 | 141.2% | 0px |
+
+```css
+.h1-bold    { font-family: 'Pretendard'; font-size: 22px; font-weight: 600; line-height: 1.364; letter-spacing: -0.43px; }
+.h1-medium  { font-family: 'Pretendard'; font-size: 22px; font-weight: 500; line-height: 1.364; letter-spacing: -0.43px; }
+.h2-bold    { font-family: 'Pretendard'; font-size: 20px; font-weight: 600; line-height: 1.40;  letter-spacing: -0.24px; }
+.h2-medium  { font-family: 'Pretendard'; font-size: 20px; font-weight: 500; line-height: 1.40;  letter-spacing: -0.24px; }
+.h3-bold    { font-family: 'Pretendard'; font-size: 18px; font-weight: 600; line-height: 1.445; letter-spacing: 0px; }
+.h3-medium  { font-family: 'Pretendard'; font-size: 18px; font-weight: 500; line-height: 1.445; letter-spacing: 0px; }
+.h4-bold    { font-family: 'Pretendard'; font-size: 17px; font-weight: 600; line-height: 1.412; letter-spacing: 0px; }
+.h4-medium  { font-family: 'Pretendard'; font-size: 17px; font-weight: 500; line-height: 1.412; letter-spacing: 0px; }
+```
+
+---
+
+### Body
+> 기준 본문 크기. Body 1이 기본, Body 2는 대체 크기.  
+> Normal: UI 컴포넌트 내 일반 텍스트 / Reading: 아티클·설명 등 길게 읽는 콘텐츠.
+
+| 스타일 | Size | Weight | Line Height | Letter Spacing |
+|--------|------|--------|-------------|----------------|
+| Body 1/Normal - Regular | 16px | 400 | 150% | 0.57% (0.09px) |
+| Body 1/Normal - Medium | 16px | 500 | 150% | 0.57% (0.09px) |
+| Body 1/Normal - Bold | 16px | 600 | 150% | 0.57% (0.09px) |
+| Body 1/Reading - Regular | 16px | 400 | 162.5% | 0.57% (0.09px) |
+| Body 1/Reading - Medium | 16px | 500 | 162.5% | 0.57% (0.09px) |
+| Body 1/Reading - Bold | 16px | 600 | 162.5% | 0.57% (0.09px) |
+| Body 2/Normal - Regular | 15px | 400 | 146.7% | 0.96% (0.14px) |
+| Body 2/Normal - Medium | 15px | 500 | 146.7% | 0.96% (0.14px) |
+| Body 2/Normal - Bold | 15px | 600 | 146.7% | 0.96% (0.14px) |
+| Body 2/Reading - Regular | 15px | 400 | 160% | 0.96% (0.14px) |
+| Body 2/Reading - Medium | 15px | 500 | 160% | 0.96% (0.14px) |
+| Body 2/Reading - Bold | 15px | 600 | 160% | 0.96% (0.14px) |
+
+```css
+.body-1-normal-regular { font-family: 'Pretendard'; font-size: 16px; font-weight: 400; line-height: 1.50;  letter-spacing: 0.09px; }
+.body-1-normal-medium  { font-family: 'Pretendard'; font-size: 16px; font-weight: 500; line-height: 1.50;  letter-spacing: 0.09px; }
+.body-1-normal-bold    { font-family: 'Pretendard'; font-size: 16px; font-weight: 600; line-height: 1.50;  letter-spacing: 0.09px; }
+.body-1-reading        { font-family: 'Pretendard'; font-size: 16px; font-weight: 400; line-height: 1.625; letter-spacing: 0.09px; }
+.body-2-normal-regular { font-family: 'Pretendard'; font-size: 15px; font-weight: 400; line-height: 1.467; letter-spacing: 0.14px; }
+.body-2-normal-medium  { font-family: 'Pretendard'; font-size: 15px; font-weight: 500; line-height: 1.467; letter-spacing: 0.14px; }
+.body-2-normal-bold    { font-family: 'Pretendard'; font-size: 15px; font-weight: 600; line-height: 1.467; letter-spacing: 0.14px; }
+.body-2-reading        { font-family: 'Pretendard'; font-size: 15px; font-weight: 400; line-height: 1.60;  letter-spacing: 0.14px; }
+```
+
+---
+
+### Label
+> 참고 내용, 버튼 텍스트, 태그, 폼 레이블 등에 사용.  
+> Label 2는 Label 1보다 낮은 위계(더 작고 보조적인 역할).
+
+| 스타일 | Size | Weight | Line Height | Letter Spacing |
+|--------|------|--------|-------------|----------------|
+| Label 1/Normal - Regular | 14px | 400 | 142.9% | 1.45% (0.20px) |
+| Label 1/Normal - Medium | 14px | 500 | 142.9% | 1.45% (0.20px) |
+| Label 1/Normal - Bold | 14px | 600 | 142.9% | 1.45% (0.20px) |
+| Label 1/Reading - Regular | 14px | 400 | 157.1% | 1.45% (0.20px) |
+| Label 1/Reading - Medium | 14px | 500 | 157.1% | 1.45% (0.20px) |
+| Label 1/Reading - Bold | 14px | 600 | 157.1% | 1.45% (0.20px) |
+| Label 2/Regular | 13px | 400 | 138.5% | 1.94% (0.25px) |
+| Label 2/Medium | 13px | 500 | 138.5% | 1.94% (0.25px) |
+| Label 2/Bold | 13px | 600 | 138.5% | 1.94% (0.25px) |
+
+```css
+.label-1-normal-regular { font-family: 'Pretendard'; font-size: 14px; font-weight: 400; line-height: 1.429; letter-spacing: 0.20px; }
+.label-1-normal-medium  { font-family: 'Pretendard'; font-size: 14px; font-weight: 500; line-height: 1.429; letter-spacing: 0.20px; }
+.label-1-normal-bold    { font-family: 'Pretendard'; font-size: 14px; font-weight: 600; line-height: 1.429; letter-spacing: 0.20px; }
+.label-1-reading        { font-family: 'Pretendard'; font-size: 14px; font-weight: 400; line-height: 1.571; letter-spacing: 0.20px; }
+.label-2-regular        { font-family: 'Pretendard'; font-size: 13px; font-weight: 400; line-height: 1.385; letter-spacing: 0.25px; }
+.label-2-medium         { font-family: 'Pretendard'; font-size: 13px; font-weight: 500; line-height: 1.385; letter-spacing: 0.25px; }
+.label-2-bold           { font-family: 'Pretendard'; font-size: 13px; font-weight: 600; line-height: 1.385; letter-spacing: 0.25px; }
+```
+
+---
+
+### Caption
+> 부가적인 내용, 메타 정보, 날짜·카운트 등 가장 작은 위계의 텍스트.  
+> Caption 2는 Caption 1보다 한 단계 낮은 위계.
+
+| 스타일 | Size | Weight | Line Height | Letter Spacing |
+|--------|------|--------|-------------|----------------|
+| Caption 1/Regular | 12px | 400 | 133.4% | 2.52% (0.30px) |
+| Caption 1/Medium | 12px | 500 | 133.4% | 2.52% (0.30px) |
+| Caption 1/Bold | 12px | 600 | 133.4% | 2.52% (0.30px) |
+| Caption 2/Regular | 11px | 400 | 127.3% | 3.11% (0.34px) |
+| Caption 2/Medium | 11px | 500 | 127.3% | 3.11% (0.34px) |
+| Caption 2/Bold | 11px | 600 | 127.3% | 3.11% (0.34px) |
+
+```css
+.caption-1-regular { font-family: 'Pretendard'; font-size: 12px; font-weight: 400; line-height: 1.334; letter-spacing: 0.30px; }
+.caption-1-medium  { font-family: 'Pretendard'; font-size: 12px; font-weight: 500; line-height: 1.334; letter-spacing: 0.30px; }
+.caption-1-bold    { font-family: 'Pretendard'; font-size: 12px; font-weight: 600; line-height: 1.334; letter-spacing: 0.30px; }
+.caption-2-regular { font-family: 'Pretendard'; font-size: 11px; font-weight: 400; line-height: 1.273; letter-spacing: 0.34px; }
+.caption-2-medium  { font-family: 'Pretendard'; font-size: 11px; font-weight: 500; line-height: 1.273; letter-spacing: 0.34px; }
+.caption-2-bold    { font-family: 'Pretendard'; font-size: 11px; font-weight: 600; line-height: 1.273; letter-spacing: 0.34px; }
+```
 
 ---
 
