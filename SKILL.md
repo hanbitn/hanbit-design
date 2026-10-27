@@ -157,10 +157,10 @@ Color / Stack / Lineup 아이콘은 브랜드 고유색이므로 색을 바꾸�
 
 | 파일 | 크기 | 용도 |
 |------|------|------|
-| `Property 1=BlankVideo.svg` | 160×160 | Illust/Blank — 빈 상태 (콘텐츠 없음) |
-| `Property 1=Search.svg` | 160×160 | Illust/Search — 검색 결과 없음 |
-| `Property 1=Labs.svg` | 160×160 | Illust/Labs — 랩스·실험 기능 |
-| `Property 1=<Color>.svg` | 74×74 | Illust/Avatar — 기본 프로필 아바타 |
+| `Blank.svg` | 160×160 | Illust/Blank — 빈 상태 (콘텐츠 없음) |
+| `Search.svg` | 160×160 | Illust/Search — 검색 결과 없음 |
+| `Labs.svg` | 160×160 | Illust/Labs — 랩스·실험 기능 |
+| `Avatar/Property 1=<Color>.svg` | 74×74 | Illust/Avatar — 기본 프로필 아바타 |
 
 `<Color>`: `Blue` `Green` `Orange` `Pink` `Purple`. 프로필 이미지가 없는 사용자에게 쓰고, 같은 사용자에게는 항상 같은 색이 가도록 ID 기반으로 고른다.
 일러스트는 크기를 키울 수는 있지만 색·형태를 바꾸지 않는다.
