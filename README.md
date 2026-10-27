@@ -61,6 +61,18 @@ git pull
 
 전체 규칙·CSS 변수·Semantic 가이드 → [SKILL.md](./SKILL.md)
 
+### 폰트 (Pretendard)
+
+한빛 디자인 시스템은 [Pretendard](https://github.com/orioncactus/pretendard) 하나만 쓴다. 웹 프로젝트에서 불러오는 방법(CDN·npm·Next.js)과 font-family 스택은 [SKILL.md](./SKILL.md)의 "Pretendard 불러오기"에 있다.
+
+Figma 작업이나 시안 확인을 위해 PC에 설치하려면:
+
+```bash
+brew install --cask font-pretendard
+```
+
+Homebrew를 쓰지 않으면 [릴리즈 페이지](https://github.com/orioncactus/pretendard/releases)에서 받아 설치한다.
+
 ---
 
 ## 유지보수
