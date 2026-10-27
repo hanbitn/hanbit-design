@@ -34,7 +34,7 @@
 | ┗ Color - Semantic | Semantic 색상 가이드 |
 | ┗ Typography | 타이포그래피 가이드 |
 | ┗ Grid | 그리드 시스템 |
-| ① Theme | 아이콘·일러스트·로고 |
+| ① Theme | 아이콘·일러스트·로고 (파일: 리포 `theme/` 폴더) |
 | ② Element | 그라디언트·인터랙션·비율 요소 |
 | ③ Component | UI 컴포넌트 |
 | Ⓜ Makers' Principle | 제작 원칙 |
