@@ -80,6 +80,38 @@ Accent, Inverse, Interaction, Static, Elevated 배경, Atomic 팔레트 전체 �
 - Normal은 UI용(좁은 행간), Reading은 장문용(넓은 행간)
 - letter-spacing 값과 스타일별 CSS 클래스 → `hanbit-design-system.md` § 타이포그래피
 
+### Pretendard 불러오기
+
+출처: https://github.com/orioncactus/pretendard (v1.3.9, SIL OFL). 프로젝트에 이미 Pretendard가 로드되어 있으면 추가하지 않는다.
+
+**웹 (기본)** — 다이나믹 서브셋. 페이지에 쓰인 글자만 내려받는다. font-family 이름은 `Pretendard`.
+
+```html
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+```
+
+CSS 파일 안에서는 `@import url("…같은 URL…");`
+
+**npm 프로젝트** — `npm i pretendard` 후 진입 파일에서 `import 'pretendard/dist/web/static/pretendard-dynamic-subset.css';`
+
+**Next.js** — `PretendardVariable.woff2`를 프로젝트에 두고 `next/font/local`로 로드한다. `weight: '45 920'`을 꼭 지정한다 (빠뜨리면 Safari에서 굵기가 틀어진다).
+
+```ts
+import localFont from 'next/font/local'
+const pretendard = localFont({ src: './fonts/PretendardVariable.woff2', display: 'swap', weight: '45 920' })
+```
+
+**font-family** — 가변 폰트·정적 폰트 어느 쪽으로 로드해도 맞도록 둘 다 적는다.
+
+```css
+font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+  Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+```
+
+`hanbit-design-system.md`의 CSS 예시에 있는 `font-family: 'Pretendard'`는 위 스택으로 바꿔 쓴다. 이 스택은 `--font-family-base` 같은 변수 하나로 정의해 두고 참조한다.
+
 ## 브레이크포인트
 
 | xs | sm | md | lg | xl |
