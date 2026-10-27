@@ -1,10 +1,10 @@
 # 한빛 Design System Skill
 
-Claude Code 스킬로 배포되는 한빛 디자인 시스템. 설치하면 UI 작업 시 자동으로 한빛 디자인 토큰·타이포그래피·브레이크포인트와 아이콘·로고 에셋이 적용된다.
+Claude Code 스킬로 배포되는 한빛 디자인 시스템. 설치하면 UI 작업 시 자동으로 한빛 디자인 토큰·타이포그래피·브레이크포인트와 아이콘·로고·일러스트 에셋이 적용된다.
 
 - **Figma**: https://www.figma.com/design/usRZn9VKhXQ9MedDWw1u57/
 - **토큰 수**: 262개 (색상 199 · Semantic 44 · Component 6 · Modal 13)
-- **에셋**: 아이콘 458개 · 로고 7개 (Figma ① Theme)
+- **에셋**: 아이콘 458개 · 일러스트 8개 · 로고 7개 (Figma ① Theme)
 
 ---
 
@@ -48,7 +48,7 @@ git pull
 - 색상·간격·크기 결정
 - 모달·다이얼로그 구현
 - 반응형 레이아웃
-- 아이콘·로고 사용
+- 아이콘·로고·일러스트 사용
 
 트리거 없이 작업하고 싶다면 `"한빛 디자인 시스템으로 버튼 만들어줘"` 처럼 명시해도 된다.
 
@@ -57,7 +57,7 @@ git pull
 1. **하드코딩 금지** — `#03aea0` 대신 `var(--color-primary-normal)`
 2. **Semantic 우선** — `Emerald/50` 대신 `Primary/Normal`
 3. **모바일 퍼스트** — xs(<768px) 기본, 미디어 쿼리로 확장
-4. **에셋은 theme/에서** — 아이콘·로고를 새로 그리거나 외부 아이콘 라이브러리로 대체하지 않음
+4. **에셋은 theme/에서** — 아이콘·로고·일러스트를 새로 그리거나 외부 아이콘 라이브러리로 대체하지 않음
 
 전체 규칙·CSS 변수·Semantic 가이드 → [SKILL.md](./SKILL.md)
 
@@ -73,6 +73,7 @@ hanbit-design/
 ├── hanbit-design-system.md   # 소스 오브 트루스 (Figma 원본 대응, 전체 스펙)
 ├── theme/                    # Figma ① Theme 에셋
 │   ├── Icon/                 #   Normal · Editor · Color · Stack · Lineup
+│   ├── Illust/               #   Blank · Search · Labs · Avatar
 │   └── Logo/Hanbit/          #   Circle · Horizontal · Vertical
 ├── CLAUDE.md                 # 이 리포 작업 시 자동 로드 (유지보수 가이드)
 ├── README.md                 # 이 파일
@@ -89,7 +90,7 @@ hanbit-design/
 ### Theme 에셋 추가·교체
 
 1. Figma ① Theme 페이지에서 SVG로 내보내기 (파일명은 Figma 변형 이름 그대로: `Name=<이름>, <속성>=<값>.svg`)
-2. `theme/Icon/<카테고리>/` 또는 `theme/Logo/`에 넣기
+2. `theme/Icon/<카테고리>/`, `theme/Illust/`, `theme/Logo/` 중 맞는 곳에 넣기
 3. 새 카테고리 폴더를 만들었다면 SKILL.md의 "Theme 에셋" 트리에 추가
 4. `./install.sh` 실행
 
@@ -106,7 +107,7 @@ hanbit-design/
 |------|------|-----------|
 | `SKILL.md` | 스킬 정의, 핵심 토큰, 원칙, 에셋 사용법 | 스킬 트리거 시 |
 | `hanbit-design-system.md` | 전체 스펙 원본 (소스) | SKILL.md에 없는 값이 필요할 때 |
-| `theme/` | 아이콘·로고 파일 | 아이콘·로고가 필요할 때 |
+| `theme/` | 아이콘·로고·일러스트 파일 | 에셋이 필요할 때 |
 | `CLAUDE.md` | 이 리포 작업 시 지침 | 이 리포 세션 시작 시 |
 
 ---

@@ -27,7 +27,7 @@ mkdir -p "$SKILL_DIR"
 cp "$SCRIPT_DIR/SKILL.md"                "$SKILL_DIR/SKILL.md"
 cp "$SCRIPT_DIR/hanbit-design-system.md" "$SKILL_DIR/hanbit-design-system.md"
 
-# ① Theme 에셋 (아이콘·로고)
+# ① Theme 에셋 (아이콘·로고·일러스트)
 cp -R "$SCRIPT_DIR/theme" "$SKILL_DIR/theme"
 find "$SKILL_DIR/theme" -name .DS_Store -delete
 

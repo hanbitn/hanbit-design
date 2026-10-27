@@ -4,7 +4,7 @@ description: >
   Apply the Hanbit Design System when doing any frontend design or UI implementation work for Hanbit projects.
   Use this skill whenever you are: building or modifying UI components, choosing colors, typography or font sizes,
   adding spacing or layout, implementing responsive behavior, writing CSS/Tailwind, creating modals or dialogs,
-  picking or inserting icons, using the Hanbit logo, or making any visual design decision in the Hanbit codebase.
+  picking or inserting icons, using the Hanbit logo or illustrations (empty states, avatars), or making any visual design decision in the Hanbit codebase.
   Trigger even when the user says things like "make it look nice", "add a button", "style this component",
   "make it responsive", "add an icon", or "update the UI" — any frontend visual task should consult this skill.
 ---
@@ -18,7 +18,7 @@ Figma: https://www.figma.com/design/usRZn9VKhXQ9MedDWw1u57/
 | 소스 | 내용 |
 |------|------|
 | `hanbit-design-system.md` | 전체 스펙 원본 — 토큰 262개, 타이포그래피, 브레이크포인트, 컴포넌트 목록 |
-| `theme/` | Figma ① Theme 페이지의 실제 에셋 파일 — 아이콘·로고 SVG |
+| `theme/` | Figma ① Theme 페이지의 실제 에셋 파일 — 아이콘·로고·일러스트 SVG |
 
 이 문서에는 자주 쓰는 값만 있다. 여기 없는 값은 추측하지 말고 `hanbit-design-system.md`에서 찾는다.
 
@@ -27,7 +27,7 @@ Figma: https://www.figma.com/design/usRZn9VKhXQ9MedDWw1u57/
 1. **하드코딩 금지**: 색상·간격·크기는 CSS 변수(`var(--color-primary-normal)`)로 표현
 2. **Semantic 우선**: Atomic 팔레트(`Emerald/50`) 직접 사용 금지. Semantic 토큰(`Primary/Normal`) 사용
 3. **모바일 퍼스트**: 기본 스타일은 xs(<768px), 미디어 쿼리로 확장
-4. **에셋은 `theme/`에서**: 아이콘·로고를 새로 그리거나 외부 라이브러리(lucide, heroicons 등)로 대체하지 않는다
+4. **에셋은 `theme/`에서**: 아이콘·로고·일러스트를 새로 그리거나 외부 라이브러리(lucide, heroicons 등)로 대체하지 않는다
 
 ## 필수 CSS 변수
 
@@ -115,7 +115,8 @@ theme/
 │   ├── Color/    # 소셜·브랜드 컬러 로고 아이콘
 │   ├── Stack/    # 기술 스택 (AWS, React, Java)
 │   └── Lineup/   # 서비스 라인업 (Hanbit, Packt, Upstage)
-└── Logo/Hanbit/  # 한빛 로고
+├── Illust/       # 빈 상태·검색 결과 없음·랩스·아바타 일러스트
+└── Logo/Hanbit/  # 한빛 로고 (Circle · Horizontal · Vertical)
 ```
 
 ### 파일 찾기
@@ -143,18 +144,30 @@ Color / Stack / Lineup 아이콘은 브랜드 고유색이므로 색을 바꾸�
 
 ### 로고 (`theme/Logo/Hanbit/`)
 
-| 파일 | 형태 | 크기 |
+| 파일 | 크기 | 용도 |
 |------|------|------|
-| `-=-.svg` | Logo Circle (심볼) | 40×40 |
-| `Color=<C>, Bold=Default.svg` | Logo Horizontal (가로형) | 74×32 |
-| `Color=<C>.svg` | Logo Vertical (세로형) | 53×77 |
+| `Logo Circle/-=-.svg` | 40×40 | 심볼만 (파비콘, 아바타 자리, 좁은 공간) |
+| `Logo Horizontal/Color=<C>, Bold=Default.svg` | 74×32 | 가로형 (헤더·내비게이션 기본) |
+| `Logo Vertical/Color=<C>.svg` | 53×77 | 세로형 (스플래시, 중앙 정렬 영역) |
 
 `<C>`: `Normal`(브랜드 컬러, 밝은 배경) · `Black`(흑백 인쇄·단색) · `White`(어두운 배경, Inverse 영역).
 로고는 비율을 유지하고, 색 변경·재채색하지 않는다.
 
+### 일러스트 (`theme/Illust/`)
+
+| 파일 | 크기 | 용도 |
+|------|------|------|
+| `Property 1=BlankVideo.svg` | 160×160 | Illust/Blank — 빈 상태 (콘텐츠 없음) |
+| `Property 1=Search.svg` | 160×160 | Illust/Search — 검색 결과 없음 |
+| `Property 1=Labs.svg` | 160×160 | Illust/Labs — 랩스·실험 기능 |
+| `Property 1=<Color>.svg` | 74×74 | Illust/Avatar — 기본 프로필 아바타 |
+
+`<Color>`: `Blue` `Green` `Orange` `Pink` `Purple`. 프로필 이미지가 없는 사용자에게 쓰고, 같은 사용자에게는 항상 같은 색이 가도록 ID 기반으로 고른다.
+일러스트는 크기를 키울 수는 있지만 색·형태를 바꾸지 않는다.
+
 ### 에셋이 없을 때
 
-`hanbit-design-system.md` § Icon에는 있는데 `theme/`에 파일이 없거나, Illustration(Illust/Blank·Labs·Search·Avatar)이 필요하면 임의로 만들지 말고 사용자에게 Figma에서 내보내 달라고 요청한다.
+`hanbit-design-system.md`에는 있는데 `theme/`에 파일이 없으면 임의로 만들지 말고 사용자에게 Figma에서 내보내 달라고 요청한다.
 
 ## 체크리스트
 
@@ -163,4 +176,5 @@ Color / Stack / Lineup 아이콘은 브랜드 고유색이므로 색을 바꾸�
 - [ ] Pretendard + 정의된 타이포 스타일만 사용
 - [ ] 모바일 퍼스트 반응형 적용
 - [ ] 모달이면 Small/Medium/Large/XLarge 중 선택
-- [ ] 아이콘·로고는 `theme/` 파일 사용, 단색 아이콘은 `currentColor`
+- [ ] 아이콘·로고·일러스트는 `theme/` 파일 사용, 단색 아이콘은 `currentColor`
+- [ ] 빈 상태·검색 결과 없음 화면에는 `theme/Illust/` 일러스트 사용

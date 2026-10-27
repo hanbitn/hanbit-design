@@ -4,11 +4,11 @@
 
 - **스킬 정의**: [SKILL.md](./SKILL.md) — 핵심 원칙, 자주 쓰는 토큰·타이포·브레이크포인트, 에셋 사용법
 - **소스 오브 트루스**: [hanbit-design-system.md](./hanbit-design-system.md) — 전체 스펙 원본 (토큰 262개, 타이포, 컴포넌트)
-- **Theme 에셋**: [theme/](./theme/) — Figma ① Theme 페이지에서 내보낸 아이콘·로고 파일
+- **Theme 에셋**: [theme/](./theme/) — Figma ① Theme 페이지에서 내보낸 아이콘·로고·일러스트 파일
 
 ## 이 리포에서 UI 작업할 때
 
-SKILL.md의 규칙을 그대로 적용한다. 자주 쓰는 값은 SKILL.md에, 나머지는 hanbit-design-system.md에서 찾는다. 아이콘·로고는 theme/의 파일을 쓴다.
+SKILL.md의 규칙을 그대로 적용한다. 자주 쓰는 값은 SKILL.md에, 나머지는 hanbit-design-system.md에서 찾는다. 아이콘·로고·일러스트는 theme/의 파일을 쓴다.
 
 ## 유지보수 흐름
 
@@ -21,7 +21,7 @@ SKILL.md의 규칙을 그대로 적용한다. 자주 쓰는 값은 SKILL.md에, 
 ### Theme 에셋 추가·교체
 
 1. Figma ① Theme 페이지에서 SVG로 내보내기 (파일명은 Figma 변형 이름 그대로: `Name=<이름>, <속성>=<값>.svg`)
-2. `theme/Icon/<카테고리>/` 또는 `theme/Logo/`에 넣기
+2. `theme/Icon/<카테고리>/`, `theme/Illust/`, `theme/Logo/` 중 맞는 곳에 넣기
 3. 새 카테고리 폴더를 만들었다면 SKILL.md "Theme 에셋" 트리에 추가
 4. `./install.sh` 실행
 
